@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: generate image tag
+      run: |
+        echo "IMAGE_TAG=$(date +%s)" >> $GITHUB_ENV
+        
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: |
+        cd Angular
+        docker build . --file Dockerfile --tag ghcr.io/feketemiklosbenjamin/lego-html:$IMAGE_TAG --tag ghcr.io/feketemiklosbenjamin/lego-html:latest
+        docker login ghcr.io -u feketemiklosbenjamin -p ${{secrets.ACCESSTOKEN}}
+        docker push ghcr.io/feketemiklosbenjamin/lego-html:$IMAGE_TAG
+        docker push ghcr.io/feketemiklosbenjamin/lego-html:latest
