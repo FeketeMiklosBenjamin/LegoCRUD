@@ -1,0 +1,22 @@
+{
+  "lego_sets": [
+    {
+      "id": "1",
+      "legoSetID": "21349",
+      "name": "Fekete-fehér macsk",
+      "theme": "Ideas",
+      "bricks": 1710,
+      "age": 18,
+      "pictureUrl": "https://www.lego.com/cdn/cs/set/assets/blteeaa0fc690139b7d/21349_boxprod_v39_sha.jpg?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
+    },
+    {
+      "id": "7dea",
+      "legoSetID": 75192,
+      "name": "Millennium Falcon™",
+      "theme": "Star Wars™",
+      "bricks": 7541,
+      "age": 16,
+      "pictureUrl": "https://www.lego.com/cdn/cs/set/assets/blt3349f56c6f192e18/75192_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
+    }
+  ]
+}

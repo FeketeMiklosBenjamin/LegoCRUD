@@ -1,0 +1,19 @@
+<div class="container-fluid text-center header">
+    <div class="row">
+        <div class="col-md-1 col-2 d-flex justify-content-center align-items-center">
+            <img src="lego-icon.png" alt="Lego icon">
+        </div>
+        <div class="col-md-1 col-2 d-flex justify-content-center align-items-center">
+            <h1 class="header-text">Lego</h1>
+        </div>
+    </div>
+</div>
+@if (modifySet != undefined) {
+    <app-lego [legoThemesData]="legoThemes" [legoData]="modifySet" (saveLegoData)="saveModLegoData($event)"></app-lego>
+}
+@else if (newSet != undefined) {
+    <app-lego [legoThemesData]="legoThemes" [legoData]="newSet" (saveLegoData)="saveNewLegoData($event)"></app-lego>
+}
+@else {
+    <app-main [legoDatas]="legoSets" [legoThemesData]="legoThemes" (legoNew)="new()" (legoMod)="mod($event)" ></app-main>
+}

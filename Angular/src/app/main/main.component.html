@@ -1,0 +1,60 @@
+<div class="container body">
+    <div class="row mt-4">
+        <div class="col-lg-4 col-8 offset-lg-4 offset-2 search-box">
+            <h3 class="text-center my-3">Keresés</h3>
+            <div class="row my-2">
+                <div class="col-12 col-md-2">
+                    <label class="col-auto col-form-label fw-bold">Név:</label>
+                </div>
+                <div class="col-12 col-md-10">
+                    <input type="text" class="form-control" (change)="search($event, 'name')">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-12 col-md-2">
+                    <label class="col-auto col-form-label fw-bold">Téma:</label>
+                </div>
+                <div class="col-12 col-md-10">
+                    <select class="form-select" (change)="search($event, 'theme')">
+                        <option value="">Kérem válasszon!</option>
+                        @for (theme of legoThemesData; track $index) {
+                        <option [value]="theme">{{ theme }}</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <button class="col-8 offset-2 btn btn-primary fw-bold" (click)="new()">Új hozzáadása</button>
+            </div>
+        </div>
+    </div>
+    <div class="cards cards-box mt-4">
+        <div class="row">
+            @if (filteredDatas.length != 0) {
+                @for (lego of filteredDatas; track $index) {
+                    <div class="col-12 col-lg-4">
+                        <div class="card m-3">
+                            <img class="card-img-top" [src]="lego.pictureUrl">
+                            <div class="card-body">
+                                <h5 class="card-title text-center fw-bold">{{lego.name}}</h5>
+                                <ul class="list-unstyled">
+                                    <li><strong>ID: </strong>{{lego.legoSetID}}</li>
+                                    <li><strong>Téma: </strong>{{lego.theme}}</li>
+                                    <li><strong>Építőelemek: </strong>{{lego.bricks}} db</li>
+                                    <li><strong>Életkor: </strong>{{lego.age}}+</li>
+                                </ul>
+                                <div class="row mx-1">
+                                    <button class="col-8 btn btn-primary fw-bold" (click)="mod(lego)">Módosítás</button>
+                                    <button class="col-3 offset-1 btn btn-danger fw-bold" (click)="delete(lego)">Törlés</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            @else {
+                <h2 class="text-center fw-bold my-5">Nincs találat!</h2>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="container modify-box">
+    <div class="row">
+        <div class="col-lg-6 col-8 offset-2 offset-lg-0">
+            <div class="row">
+                <h2 class="fw-bold text-center my-5">Szerkesztés</h2>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-lg-4">
+                    <label class="col-auto col-form-label fw-bold">Lego szett ID:</label>
+                </div>
+                <div class="col-7 col-lg-3">
+                    <input type="number" class="form-control" [value]="legoData!.legoSetID" (change)="legoData!.legoSetID = getDataNumber($event)"/>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-lg-4">
+                    <label class="col-auto col-form-label fw-bold">Lego szett neve:</label>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <input type="text" class="form-control" [value]="legoData!.name" (change)="legoData!.name = getData($event)"/>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-lg-4">
+                    <label class="col-auto col-form-label fw-bold">Lego szett témája:</label>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <select class="form-select" [value]="legoData!.theme" (change)="legoData!.theme = getData($event)">
+                        <option [value]="legoData?.theme">{{legoData?.theme}}</option>
+                        @for (theme of legoThemesData; track $index) {
+                        <option [value]="theme">{{ theme }}</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-lg-4">
+                    <label class="col-auto col-form-label fw-bold">Építőelemek száma:</label>
+                </div>
+                <div class="col-9 col-lg-5">
+                    <div class="input-group">
+                        <input type="number" class="form-control" [value]="legoData!.bricks" (change)="legoData!.bricks = getDataNumber($event)"/>
+                        <div class="input-group-append">
+                            <span class="input-group-text">darab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-lg-4">
+                    <label class="col-auto col-form-label fw-bold">Ajánlott életkor:</label>
+                </div>
+                <div class="col-7 col-lg-4">
+                    <div class="input-group">
+                        <input type="number" class="form-control" [value]="legoData!.age" (change)="legoData!.age = getDataNumber($event)"/>
+                        <div class="input-group-append">
+                            <span class="input-group-text fw-bold">+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col-12 col-lg-4">
+                    <label class="col-auto col-form-label fw-bold">Kép (URL):</label>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <input type="text" class="form-control" [value]="legoData!.pictureUrl" (change)="legoData!.pictureUrl = getDataUrl($event)"/>
+                </div>
+            </div>
+
+            <div class="row my-5">
+                <button class="btn btn-success col-5 col-lg-4 offset-1 offset-lg-1" (click)="save()">Mentés</button>
+                <button class="btn btn-danger col-5 col-lg-4 offset-1 offset-lg-2" (click)="close()">Mégsem</button>
+            </div>
+
+        </div>
+        <div class="col-lg-4 col-6 offset-3 offset-lg-1">
+            <div class="card m-3">
+                <img class="card-img-top" [src]="legoData?.pictureUrl">
+                <div class="card-body">
+                    <h5 class="card-title text-center fw-bold">{{legoData?.name}}</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>ID: </strong>{{legoData?.legoSetID}}</li>
+                        <li><strong>Téma: </strong>{{legoData?.theme}}</li>
+                        <li><strong>Építőelemek: </strong>{{legoData?.bricks}} db</li>
+                        <li><strong>Életkor: </strong>{{legoData?.age}}+</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
