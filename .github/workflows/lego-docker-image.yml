@@ -35,4 +35,4 @@ jobs:
         app-name: 'LegoCRUD'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_7044f7aa539142bf8931d2f32e48162d }}
-        images: 'ghcr.io/feketemiklosbenjamin/lego-html:${{ env.VERSION }}'
+        images: 'ghcr.io/feketemiklosbenjamin/lego-html:${{ env.IMAGE_TAG }}'
