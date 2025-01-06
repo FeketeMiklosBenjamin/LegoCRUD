@@ -17,6 +17,42 @@
       "bricks": 7541,
       "age": 16,
       "pictureUrl": "https://www.lego.com/cdn/cs/set/assets/blt3349f56c6f192e18/75192_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
+    },
+    {
+      "id": "4e8b",
+      "legoSetID": 10350,
+      "name": "Tudor-kori városrész",
+      "theme": "LEGO® Icons",
+      "bricks": 3266,
+      "age": 18,
+      "pictureUrl": "https://www.lego.com/cdn/cs/set/assets/bltc38b5911d77d1733/10350_Prod.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
+    },
+    {
+      "id": "2bf7",
+      "legoSetID": 42172,
+      "name": "McLaren P1™",
+      "theme": "Technic",
+      "bricks": 3893,
+      "age": 18,
+      "pictureUrl": "https://www.lego.com/cdn/cs/set/assets/blt519dac201a3dd4c1/42172.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
+    },
+    {
+      "id": "4de6",
+      "legoSetID": 76303,
+      "name": "Batman™ Tumbler vs. Kétarc™ és Joker™",
+      "theme": "Batman™",
+      "bricks": 429,
+      "age": 8,
+      "pictureUrl": "https://www.lego.com/cdn/cs/set/assets/blt6f3ee52e95ff88f6/76303_Prod_en-gb.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
+    },
+    {
+      "id": "e46e",
+      "legoSetID": 76925,
+      "name": "Aston Martin biztonsági autó és AMR23",
+      "theme": "Speed Champions",
+      "bricks": 564,
+      "age": 9,
+      "pictureUrl": "https://www.lego.com/cdn/cs/set/assets/blt504477796607bd27/76925.png?format=webply&fit=bounds&quality=60&width=800&height=800&dpr=2"
     }
   ]
 }

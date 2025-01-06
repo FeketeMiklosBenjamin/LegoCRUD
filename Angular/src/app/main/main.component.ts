@@ -24,11 +24,9 @@ export class MainComponent {
     this.dataService.getLegos().subscribe({
       next: (data: Lego[]) => {
         this.filteredDatas = data;
-        console.log("ok")
       },
       error: (err) => console.log(err)
     })
-    this.filteredDatas = JSON.parse(JSON.stringify(this.legoDatas))
   }
 
   new() {
